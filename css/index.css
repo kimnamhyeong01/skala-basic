@@ -1,0 +1,30 @@
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url(./kdh.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+}
+
+h1{ 
+            color:green;
+            text-align: center;
+            font-size: 72px;
+} 
+
+p {
+    font-size: 24px;
+    text-align: center;
+} 
+
+.large{
+    font-size: 48px; 
+    font-style:italic;
+} 
+
+.orange{
+    color: orange; 
+    font-weight: bolder;
+} 

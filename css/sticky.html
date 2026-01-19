@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Sticky 확실한 예제</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+    }
+
+    .spacer {
+        height: 600px;
+        background: #eee;
+        padding: 20px;
+    }
+
+    .sticky {
+        position: sticky;
+        top: 0;
+        background: purple;
+        color: white;
+        padding: 20px;
+        font-weight: bold;
+        z-index: 10;
+    }
+
+    .content {
+        height: 1200px;
+        padding: 20px;
+        background: #f9f9f9;
+    }
+</style>
+</head>
+<body>
+
+<div class="spacer">
+    sticky 위 공간 (여기를 지나야 sticky가 발동함)
+</div>
+
+<div class="sticky">STICKY</div>
+
+<div class="content">
+    아래 콘텐츠<br><br>
+    스크롤 계속 ↓↓↓
+</div>
+
+</body>
+</html>

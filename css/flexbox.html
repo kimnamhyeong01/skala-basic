@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox 박스 정렬</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* 전체 영역 (점선 박스) */
+        .container {
+            display: flex;                 /* Flexbox 활성화 */
+            justify-content: center;       /* 가로(주축) 중앙 정렬 */
+            align-items: center;           /* 세로(교차축) 중앙 정렬 */
+            height: 400px;                 /* 세로 중앙 정렬을 위한 높이 */
+            border: 2px dashed #999;
+        }
+
+        /* 개별 박스 */
+        .box {
+            width: 120px;
+            height: 120px;
+            background-color: #8fd3f4;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+
+            /* 박스 안 숫자 중앙 정렬 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flexbox 박스 정렬</h1>
+    <p>Flexbox를 이용해서 3개의 박스를 가로 및 세로 중앙 정렬</p>
+
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+
+</body>
+</html>
