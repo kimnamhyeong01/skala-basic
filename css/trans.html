@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform and Transition Example</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        /* 상단 박스 */
+        .box {
+            width: 180px;
+            height: 180px;
+            background-color: #4CAF50; /* 녹색 */
+            color: white;
+            border-radius: 20px;       /* 라운드 처리 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            font-weight: bold;
+
+            /* transition 핵심 */
+            transition: background-color 0.4s, transform 0.4s;
+        }
+
+        /* 마우스 hover 시 */
+        .box:hover {
+            background-color: #FFD700; /* 노란색 */
+        }
+
+        /* 버튼 */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 버튼 클릭 시 회전 */
+        .rotate {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Transform and Transition Example</h2>
+
+    <!-- 상단 박스 -->
+    <div class="box" id="box">
+        Hover me!
+    </div>
+
+    <!-- 하단 버튼 -->
+    <button onclick="rotateBox()">Click Me!</button>
+
+    <script>
+        function rotateBox() {
+            const box = document.getElementById("box");
+            box.classList.toggle("rotate");
+        }
+    </script>
+
+</body>
+</html>
