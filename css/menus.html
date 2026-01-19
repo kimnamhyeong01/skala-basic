@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Offcanvas Accordion Menu (Icon Button)</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        rel="stylesheet"
+    >
+</head>
+<body>
+
+<!-- 상단 네비게이션 -->
+<nav class="navbar navbar-light bg-light px-3">
+    <!-- 아이콘 메뉴 버튼 -->
+    <button
+        class="btn btn-outline-secondary"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#menuOffcanvas"
+        aria-controls="menuOffcanvas"
+    >
+        <i class="bi bi-list fs-3"></i>
+    </button>
+</nav>
+
+<!-- Offcanvas 사이드바 -->
+<div
+    class="offcanvas offcanvas-start"
+    tabindex="-1"
+    id="menuOffcanvas"
+    aria-labelledby="menuOffcanvasLabel"
+>
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="menuOffcanvasLabel">메뉴</h5>
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+        ></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <div class="accordion" id="menuAccordion">
+
+            <!-- 한식 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menu1"
+                    >
+                        🍚 한식
+                    </button>
+                </h2>
+                <div
+                    id="menu1"
+                    class="accordion-collapse collapse show"
+                    data-bs-parent="#menuAccordion"
+                >
+                    <div class="accordion-body">
+                        <ul class="list-unstyled mb-0">
+                            <li>김치찌개</li>
+                            <li>비빔밥</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 중식 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menu2"
+                    >
+                        🥟 중식
+                    </button>
+                </h2>
+                <div
+                    id="menu2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion"
+                >
+                    <div class="accordion-body">
+                        <ul class="list-unstyled mb-0">
+                            <li>짜장면</li>
+                            <li>탕수육</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 양식 · 일식 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menu3"
+                    >
+                        🍝 양식 · 🍣 일식
+                    </button>
+                </h2>
+                <div
+                    id="menu3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion"
+                >
+                    <div class="accordion-body">
+                        <ul class="list-unstyled mb-0">
+                            <li>파스타</li>
+                            <li>초밥</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+></script>
+
+</body>
+</html>
