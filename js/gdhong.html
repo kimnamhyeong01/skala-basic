@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>홍길동의 식량 분배</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>홍길동의 식량 분배 결과</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>이름</th>
+            <th>받은 식량</th>
+        </tr>
+    </thead>
+    <tbody id="resultBody">
+        <!-- JS로 행 추가 -->
+    </tbody>
+</table>
+
+<script>
+    // 식량 목록
+    const foods = [
+        "쌀", "보리", "콩", "감자", "양파",
+        "마늘", "배추", "무", "고구마", "호박"
+    ];
+
+    // 가난한 사람들
+    const poors = ["철수", "영희", "민수"];
+
+    // 결과 배열 생성
+    const results = poors.map(name => ({
+        name: name,
+        items: []
+    })); 
+    console.table(results)
+
+    // 공평하게 식량 분배
+    for (let i = 0; i < foods.length; i++) {
+        const index = i % poors.length;
+        results[index].items.push(foods[i]);
+    }
+
+    // 테이블에 결과 출력
+    const tbody = document.getElementById("resultBody");
+
+    results.forEach(person => {
+        const tr = document.createElement("tr");
+
+        const nameTd = document.createElement("td");
+        nameTd.textContent = person.name;
+
+        const itemsTd = document.createElement("td");
+        itemsTd.textContent = person.items.join(", ");
+
+        tr.appendChild(nameTd);
+        tr.appendChild(itemsTd);
+        tbody.appendChild(tr);
+    });
+</script>
+
+</body>
+</html>

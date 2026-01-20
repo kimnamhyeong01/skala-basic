@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>분신 홍길동</title>
+</head>
+<body>
+
+<script>
+    // 진짜 홍길동
+    const realHong = {
+        name: "홍길동",
+        age: 25,
+        job: "의적",
+        skills: ["검술", "전략", "분신"],
+        shadow: {
+            color: "검은색"
+        }
+    };
+
+    // 가짜 홍길동 생성
+    const fakeHong = {
+        name: realHong.name,
+        age: realHong.age,
+        job: realHong.job,
+        // '분신' 기술 제거
+        skills: realHong.skills.filter(skill => skill !== "분신")
+        // shadow 속성 없음
+    };
+
+    // 결과 출력
+    console.log("진짜 홍길동:", realHong);
+    console.log("가짜 홍길동:", fakeHong);
+</script>
+
+</body>
+</html>

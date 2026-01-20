@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간 예제</title>
+</head>
+<body>
+    <script>
+        function getTodayYYYYMMDD() {
+            const today = new Date();
+
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, "0");
+            const day = String(today.getDate()).padStart(2, "0");
+
+            return `${year}-${month}-${day}`;
+        } 
+
+        const now = new Date();
+        console.log(now.toString());
+        console.log(now.toISOString());
+        console.log(now.toLocaleString('ko-KR', {timeZone: 'Asia/Seoul'}));
+        console.log(getTodayYYYYMMDD()); // 예: 2026-01-20 
+
+        //30일 전 날짜
+        const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000); //30일 전 날짜가 나온다.
+        console.log(getTodayYYYYMMDD(oneMonthAgo)); 
+
+    </script>
+</body>
+</html>

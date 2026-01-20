@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 관련 문법</title>
+</head>
+<body>
+    <script>
+        let message = '머리와 몸통 ' + '꽁무니';
+        console.log(message);
+
+        let num1 = 3;
+        let num2 = 8;
+        let result = `${num1} 곱하기 ${num2}은 ${num1 * num2}입니다.`;
+        console.log(result) 
+
+        let num = 123;
+        let str = num + ""
+        console.log(str);
+        console.log(typeof str); 
+
+        const person = {
+            name: "홍길동",
+            age: 30,
+            job:"개발자"
+        };
+        console.log(person.name); 
+        
+        const fruits = ["사과", "바나나", "딸기"];
+        console.log(fruits[1]);
+
+        function greet(name){
+            return `안녕하세요, ${name}님!`;
+        } 
+        console.log(greet('길동'));
+
+        const now = new Date();
+        console.log(now.toLocaleDateString()); 
+        const myMap = new Map();
+        myMap.set("name", "길동");
+        myMap.set(123, "숫자 키");
+        console.log(myMap.get(123)); 
+
+        const mySet = new Set();
+        mySet.add("사과");
+        mySet.add("바나나");
+        mySet.add("사과");
+        console.log(mySet.size);
+
+        for(let i = 0; i < 5; i++){
+            console.log(i);
+        } 
+
+        let obj = {name: '홍길동', age: 28, company: '활빈당'};
+        for (let key in obj){
+            console.log(key, obj[key]);
+        }
+
+        let arr = [10, 20, 30];
+        for(let value of arr){
+            console.log(value);
+        }
+    </script>
+</body>
+</html>

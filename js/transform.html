@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>홍길동의 변신</title>
+</head>
+<body>
+
+<script>
+    // 홍길동 변신 함수
+    transform();
+    function transform() {
+        // 사용자 입력 받기
+        const input = prompt("홍길동은 무엇으로 변신할까요?");
+
+        // 입력값이 없는 경우 (취소 or 빈 문자열)
+        if (input === null || input.trim() === "") {
+            alert("연기처럼 사라졌습니다.");
+        } else {
+            alert(`홍길동 변신 - ${input}!`);
+        }
+    }
+
+</script>
+
+</body>
+</html>
