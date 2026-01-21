@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>버튼 mouseover 예제</title>
+
+    <style>
+        /* 기본 페이지 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+    
+        /* 버튼 기본 상태 */
+        .hover-btn {
+            background-color: #3498db;   /* 파란색 */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>버튼 mouseover 예제</h1>
+
+    <button class="hover-btn" id="hoverButton">
+        마우스를 올려보세요
+    </button>
+
+    <script>
+        const button = document.getElementById('hoverButton');
+
+        // 마우스를 올렸을 때
+        button.addEventListener('mouseover', function () {
+            button.style.backgroundColor = '#2ecc71'; // 초록색
+            button.style.cursor = 'help';
+        });
+
+        // 마우스를 뗐을 때
+        button.addEventListener('mouseout', function () {
+            button.style.backgroundColor = '#3498db'; // 파란색
+            button.style.cursor = 'pointer';
+        });
+    </script>
+
+</body>
+</html>

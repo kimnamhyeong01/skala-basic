@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 캡처링 테스트</title>
+</head>
+<body>
+
+    <h1>이벤트 캡처링 테스트</h1> 
+
+    <div id="eventSection"
+         style="width:300px; height:200px; border:1px solid black; margin:20px; padding: 10px;">
+         
+        <button id="eventBtn">클릭해보세요!</button>
+        <p id="eventOutput">출력될 내용</p>
+    </div>
+    
+    <script>
+        const eventButton = document.getElementById('eventBtn');
+        const eventOutput = document.getElementById('eventOutput'); 
+        const eventSection = document.getElementById('eventSection');
+
+        /* =========================
+           1️⃣ 캡처링 단계 (SECTION)
+        ========================== */
+        eventSection.addEventListener(
+            'click',
+            (e) => {
+                console.log('📌 SECTION - 캡처링 단계');
+            },
+            true   // ⭐ 캡처링
+        );
+
+        /* =========================
+           2️⃣ 타깃 단계 (BUTTON)
+        ========================== */
+        eventButton.addEventListener('click', (e) => {
+            console.log('🎯 BUTTON - 타깃 단계');
+            eventOutput.textContent = '버튼 클릭됨';
+        });
+
+        /* =========================
+           3️⃣ 버블링 단계 (SECTION)
+        ========================== */
+        eventSection.addEventListener('click', (e) => {
+            console.log('🔁 SECTION - 버블링 단계');
+        });
+
+        /* =========================
+           4️⃣ 전파 차단 테스트
+           (주석 해제해서 실험)
+        ========================== */
+        /*
+        eventButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            console.log('⛔ 전파 중단됨');
+        });
+        */
+    </script>
+
+</body>
+</html>
